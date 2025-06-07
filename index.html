@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminos Que Se Construyen Juntos - Caja de Herramientas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script>
+        // New vibrant, authoritative color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1f2937',        // Dark Charcoal for text
+                        'accent-primary': '#0d9488', // Teal
+                        'accent-secondary': '#f59e0b',// Amber/Gold
+                        'background': '#f9fafb',      // Light, clean grey
+                        'card-bg': '#ffffff',       // White
+                        'dark-bg': '#111827',        // Very Dark Charcoal/Blue
+                        'light-text': '#f3f4f6',      // Light grey for text on dark bg
+                        'muted': '#4b5563',         // Medium grey for subtitles
+                        'border-color': '#e5e7eb',    // Light border color
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: url('https://storage.googleapis.com/dialogflow-workbench-upload-agent-integration-storage-prod/2133f40f-78e7-444f-a859-a5481775fbf1/Caja%20de%20Herramientas_Asociatividad_Emprendimiento%20Joven%20RURAL_version27042025_D.docx-1.png');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Style for scroll margin top to offset sticky header */
+        .scroll-mt-header {
+            scroll-margin-top: 100px; /* Adjust this value based on your sticky header's height */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-background font-inter text-primary">
+
+    <!-- Header & Navigation -->
+    <header class="bg-card-bg/90 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-accent-primary">Caja de Herramientas para la Asociatividad Rural</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-muted hover:text-accent-primary transition">Inicio</a>
+                <a href="#asociatividad" class="text-muted hover:text-accent-primary transition">Asociatividad</a>
+                <a href="#herramientas" class="text-muted hover:text-accent-primary transition">Herramientas</a>
+                <a href="#casos" class="text-muted hover:text-accent-primary transition">Casos de Éxito</a>
+                <a href="#autores" class="text-muted hover:text-accent-primary transition">Autores</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-primary">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card-bg">
+            <a href="#inicio" class="block py-2 px-6 text-sm text-muted hover:bg-background">Inicio</a>
+            <a href="#asociatividad" class="block py-2 px-6 text-sm text-muted hover:bg-background">Asociatividad</a>
+            <a href="#herramientas" class="block py-2 px-6 text-sm text-muted hover:bg-background">Herramientas</a>
+            <a href="#casos" class="block py-2 px-6 text-sm text-muted hover:bg-background">Casos de Éxito</a>
+            <a href="#autores" class="block py-2 px-6 text-sm text-muted hover:bg-background">Autores</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="min-h-[70vh] flex items-center relative hero-bg">
+            <div class="absolute inset-0 bg-dark-bg/60"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">Caminos Que Se Construyen Juntos</h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">Una caja de herramientas para la asociatividad rural empresarial juvenil en Colombia. Fortaleciendo la participación juvenil a través del emprendimiento, la planeación y la economía solidaria.</p>
+            </div>
+        </section>
+
+        <!-- Section: ¿Qué es la Asociatividad? -->
+        <section id="asociatividad" class="py-20 bg-card-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">¿Qué es la Asociatividad?</h2>
+                    <p class="mt-4 text-lg text-muted max-w-2xl mx-auto">Una estrategia de cooperación para mejorar la productividad, competitividad y desarrollo integral del territorio rural.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1591115765324-21a48d02a3a8?q=80&w=2070&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0d9488/FFFFFF?text=Campo';" alt="Jóvenes rurales trabajando juntos en el campo." class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-muted leading-relaxed">La asociatividad es la unión voluntaria de personas en torno a un interés común. En el contexto rural, se materializa en cooperativas, asociaciones productivas y otras formas de economía solidaria. Es una respuesta organizativa que permite a los jóvenes superar barreras, generar oportunidades y transformar sus comunidades.</p>
+                        <div class="space-y-4">
+                            <div class="bg-background p-4 rounded-lg border border-border-color">
+                                <h3 class="font-bold text-accent-secondary">Empoderamiento Económico</h3>
+                                <p class="text-sm text-muted">Al unirse, los jóvenes logran economías de escala, negocian mejores precios y eliminan intermediarios injustos.</p>
+                            </div>
+                             <div class="bg-background p-4 rounded-lg border border-border-color">
+                                <h3 class="font-bold text-accent-secondary">Desarrollo de Habilidades</h3>
+                                <p class="text-sm text-muted">Fomenta capacidades de liderazgo, administración, resolución de conflictos y toma de decisiones democráticas.</p>
+                            </div>
+                            <div class="bg-background p-4 rounded-lg border border-border-color">
+                                <h3 class="font-bold text-accent-secondary">Arraigo y Cohesión Social</h3>
+                                <p class="text-sm text-muted">Crea oportunidades locales que reducen la migración y fortalecen la confianza y la solidaridad comunitaria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Herramientas -->
+        <section id="herramientas" class="py-20 bg-background">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">La Caja de Herramientas</h2>
+                    <p class="mt-4 text-lg text-muted max-w-2xl mx-auto">12 herramientas prácticas para impulsar la asociatividad juvenil rural desde lo local.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Tool Cards with updated design -->
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/centros-rais.svg" alt="Icono de Centros RAIS" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=1'">
+                        <h3 class="font-bold text-lg text-primary mb-2">1. Centros RAIS</h3>
+                        <p class="text-sm text-muted flex-grow">Nodos territoriales para articular y acompañar el emprendimiento asociativo juvenil.</p>
+                        <a href="#herramienta-1" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <!-- Repeat for all 12 cards with the new button style -->
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/asesoria-tecnica.svg" alt="Icono de Asesoría Técnica" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=2'">
+                        <h3 class="font-bold text-lg text-primary mb-2">2. Asesoría Técnica</h3>
+                        <p class="text-sm text-muted flex-grow">Apoyo jurídico y administrativo para facilitar la formalización.</p>
+                        <a href="#herramienta-2" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/ruta-formacion.svg" alt="Icono de Ruta de Formación" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=3'">
+                        <h3 class="font-bold text-lg text-primary mb-2">3. Ruta de Formación</h3>
+                        <p class="text-sm text-muted flex-grow">Fortalecer competencias en economía solidaria desde la escuela.</p>
+                        <a href="#herramienta-3" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/fondos-concursables.svg" alt="Icono de Fondos Concursables" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=4'">
+                        <h3 class="font-bold text-lg text-primary mb-2">4. Fondos Concursables</h3>
+                        <p class="text-sm text-muted flex-grow">Proveer capital semilla y dotación de activos para el arranque.</p>
+                        <a href="#herramienta-4" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/acceso-mercados.svg" alt="Icono de Acceso a Mercados" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=5'">
+                        <h3 class="font-bold text-lg text-primary mb-2">5. Acceso a Mercados</h3>
+                        <p class="text-sm text-muted flex-grow">Conectar asociaciones juveniles con compradores públicos y privados.</p>
+                        <a href="#herramienta-5" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/planeacion-colectiva.svg" alt="Icono de Planeación Colectiva" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=6'">
+                        <h3 class="font-bold text-lg text-primary mb-2">6. Planeación Colectiva</h3>
+                        <p class="text-sm text-muted flex-grow">Incluir a la juventud rural en la toma de decisiones y presupuestos.</p>
+                        <a href="#herramienta-6" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/redes-aprendizaje.svg" alt="Icono de Redes de Aprendizaje" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=7'">
+                        <h3 class="font-bold text-lg text-primary mb-2">7. Redes de Aprendizaje</h3>
+                        <p class="text-sm text-muted flex-grow">Facilitar el intercambio de experiencias y saberes entre organizaciones.</p>
+                        <a href="#herramienta-7" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/credito-adaptado.svg" alt="Icono de Crédito Adaptado" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=8'">
+                        <h3 class="font-bold text-lg text-primary mb-2">8. Crédito Adaptado</h3>
+                        <p class="text-sm text-muted flex-grow">Eliminar barreras legales y financieras con instrumentos adaptados.</p>
+                        <a href="#herramienta-8" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/fondos-fodes.svg" alt="Icono de Fondos FODES" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=9'">
+                        <h3 class="font-bold text-lg text-primary mb-2">9. Fondos FODES</h3>
+                        <p class="text-sm text-muted flex-grow">Activar fondos territoriales para financiar y acompañar emprendimientos.</p>
+                        <a href="#herramienta-9" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/intercooperacion-local.svg" alt="Icono de Intercooperación Local" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=10'">
+                        <h3 class="font-bold text-lg text-primary mb-2">10. Intercooperación Local</h3>
+                        <p class="text-sm text-muted flex-grow">Fomentar redes de comercio justo con la estrategia "Local compra local".</p>
+                        <a href="#herramienta-10" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/tejido-equidad.svg" alt="Icono de Tejido de Equidad" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=11'">
+                        <h3 class="font-bold text-lg text-primary mb-2">11. Tejido de Equidad</h3>
+                        <p class="text-sm text-muted flex-grow">Impulsar el liderazgo económico de las mujeres jóvenes rurales.</p>
+                        <a href="#herramienta-11" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                    <div class="bg-card-bg p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-border-color">
+                        <img src="images/diversidad-emprende.svg" alt="Icono de Diversidad que Emprende" class="w-10 h-10 mb-4" onerror="this.src='https://placehold.co/40x40/f59e0b/FFFFFF?text=12'">
+                        <h3 class="font-bold text-lg text-primary mb-2">12. Diversidad que Emprende</h3>
+                        <p class="text-sm text-muted flex-grow">Garantizar la participación plena de jóvenes rurales con discapacidad.</p>
+                        <a href="#herramienta-12" class="mt-4 inline-block bg-transparent border-2 border-accent-primary text-accent-primary px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-primary hover:text-white transition-colors duration-300">Saber más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Casos de Éxito -->
+        <section id="casos" class="py-20 bg-card-bg">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">Casos de Éxito</h2>
+                    <p class="mt-4 text-lg text-muted max-w-2xl mx-auto">Experiencias reales que demuestran el poder de la asociatividad juvenil rural.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-background rounded-lg shadow-sm p-6 border border-border-color">
+                        <h3 class="font-bold text-xl text-accent-secondary mb-3">Comproagro</h3>
+                        <p class="text-muted">Plataforma digital creada por jóvenes en Boyacá que conecta directamente a miles de productores con consumidores, logrando precios justos y eliminando intermediarios. Hoy tienen alianzas con grandes supermercados.</p>
+                    </div>
+                    <div class="bg-background rounded-lg shadow-sm p-6 border border-border-color">
+                        <h3 class="font-bold text-xl text-accent-secondary mb-3">Servicios Ambientales</h3>
+                        <p class="text-muted">En el Eje Cafetero, una cooperativa de jóvenes profesionales ofrece asistencia técnica en gestión del agua y cambio climático a municipios, creando empleo de calidad y reteniendo talento en la región.</p>
+                    </div>
+                    <div class="bg-background rounded-lg shadow-sm p-6 border border-border-color">
+                        <h3 class="font-bold text-xl text-accent-secondary mb-3">Bancos de Herramientas</h3>
+                        <p class="text-muted">En Nariño y Cauca, asociaciones juveniles gestionan colectivamente activos como guadañadoras o insumos a través de bancos comunitarios y fondos rotatorios, multiplicando el impacto de los apoyos recibidos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW Section: Herramientas en Detalle (DARK THEME) -->
+        <section id="herramientas-detalle" class="py-20 bg-dark-bg text-light-text">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-card-bg">Herramientas en Detalle</h2>
+                    <p class="mt-4 text-lg text-light-text/80 max-w-2xl mx-auto">Explora el propósito y la implementación de cada herramienta para la acción colectiva.</p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Tool 1 Detail with Badge Links -->
+                    <div id="herramienta-1" class="bg-primary/50 p-8 rounded-lg shadow-lg scroll-mt-header border border-muted/30">
+                        <h3 class="text-2xl font-bold text-accent-secondary mb-6">1. Centros RAIS</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">🎯 Objetivo</h4><p class="text-sm text-light-text/90">Unificar servicios de apoyo rural para jóvenes en un espacio único.</p></div>
+                            <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📋 Acciones Clave</h4><p class="text-sm text-light-text/90">Crear Centros RAIS, vincular UMATA, oficinas de juventud, universidades y cámaras de comercio.</p></div>
+                            <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📊 Indicadores</h4><p class="text-sm text-light-text/90">Nodos operando, jóvenes atendidos, organizaciones creadas, convenios firmados.</p></div>
+                        </div>
+                        <div class="flex items-start flex-wrap gap-x-4 gap-y-2 text-sm mb-6">
+                            <strong class="text-card-bg pt-1">Normas:</strong>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=66789" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 160/1994</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=66787" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 101/1993</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3433" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 454/1998</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=160966" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 2069/2020</a>
+                            </div>
+                        </div>
+                         <!-- Collapsible Sections -->
+                        <div class="space-y-4">
+                            <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Resumen</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">Los Centros RAIS (Red de Apoyo a la Iniciativa Solidaria) son nodos territoriales diseñados para articular la oferta institucional y fortalecer el emprendimiento asociativo juvenil rural. Operan como espacios físicos y comunitarios donde convergen saberes, herramientas y actores clave como alcaldías, UMATA, universidades y redes juveniles. Su misión es activar ecosistemas de economía solidaria con enfoque juvenil, ofreciendo servicios integrales y accesibles de formación, asesoría organizativa, incubación de empresas y apoyo a la comercialización. Al unificar el acompañamiento técnico-productivo con la gestión jurídica, financiera y comunitaria, los RAIS resuelven la dispersión institucional y conectan los saberes locales con rutas de crecimiento empresarial. Funcionan como una infraestructura de apoyo permanente, adaptada a las realidades intermunicipales o veredales, y se proyectan como catalizadores de la transformación rural liderada por jóvenes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Comentario de aplicación</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">Esta herramienta es una pieza clave en la construcción de ecosistemas de desarrollo local sostenible. Más que una simple oficina, un Centro RAIS debe concebirse como un nodo de innovación público-social, enfocado en impulsar cadenas de valor cooperativas, emprendimientos comunitarios y procesos asociativos juveniles. Su viabilidad depende fundamentalmente de la voluntad política local, la consolidación de alianzas institucionales sólidas y una participación juvenil activa y protagónica en su diseño y operación. Colombia tiene el potencial para liderar esta innovación, creando un modelo con un enfoque territorial, inclusivo y genuinamente solidario. La articulación con instituciones académicas, como las universidades de la Red UNICOSSOL, es vital para asegurar la sostenibilidad técnica y el rigor metodológico, alineando el conocimiento universitario con las necesidades concretas del territorio y garantizando un acompañamiento integral y de alta calidad.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Repeat for all 12 tools -->
+                    <div id="herramienta-2" class="bg-primary/50 p-8 rounded-lg shadow-lg scroll-mt-header border border-muted/30">
+                        <h3 class="text-2xl font-bold text-accent-secondary mb-6">2. Asesoría Técnica</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">🎯 Objetivo</h4><p class="text-sm text-light-text/90">Acompañamiento continuo para la formalización y gobernanza democrática.</p></div>
+                            <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📋 Acciones Clave</h4><p class="text-sm text-light-text/90">Crear ventanillas de economía solidaria, facilitar manuales, y promover mentorías.</p></div>
+                            <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📊 Indicadores</h4><p class="text-sm text-light-text/90">Organizaciones formalizadas, tiempo de constitución, mentorías activas.</p></div>
+                        </div>
+                        <div class="flex items-start flex-wrap gap-x-4 gap-y-2 text-sm mb-6">
+                            <strong class="text-card-bg pt-1">Normas:</strong>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=9211" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 79/1988</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3433" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 454/1998</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=160966" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 2069/2020</a>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                             <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Resumen</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">Esta herramienta busca facilitar a los grupos de jóvenes rurales el proceso de creación y formalización de sus organizaciones, ya sean cooperativas o asociaciones, proporcionando un apoyo integral en los ámbitos técnico, jurídico y metodológico. El objetivo es acompañarlos desde la concepción de la idea hasta su constitución legal y el fortalecimiento de su gobernanza inicial. Esto se implementa a través de la creación de "ventanillas de economía solidaria" en las alcaldías, donde se ofrece asesoría gratuita, se facilitan manuales y se orienta en la elaboración de estatutos y registros. Además, se promueven mentorías intergeneracionales que conectan a los nuevos grupos con líderes de cooperativas ya consolidadas, creando un sistema de apoyo continuo durante los primeros años, que son críticos para la supervivencia de cualquier emprendimiento colectivo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Comentario de aplicación</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">El tránsito de la informalidad a la formalización es un paso crucial que habilita a las organizaciones juveniles para acceder a financiamiento, comercializar legalmente y construir una gobernanza democrática y transparente. La Ley 2069 de 2020 fortalece este ecosistema al permitir alianzas estratégicas entre pequeñas empresas y cooperativas, una vía clave para escalar los proyectos juveniles. Por ello, esta herramienta no debe ser vista como una asesoría puntual, sino como un servicio público de acompañamiento empresarial solidario y continuo. El rol de las alcaldías y gobiernos locales como articuladores de este proceso es fundamental para garantizar que los jóvenes no solo creen su organización, sino que la consoliden y la hagan sostenible en el tiempo, superando las dificultades iniciales de gestión y administración.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div id="herramienta-3" class="bg-primary/50 p-8 rounded-lg shadow-lg scroll-mt-header border border-muted/30">
+                        <h3 class="text-2xl font-bold text-accent-secondary mb-6">3. Ruta de Formación</h3>
+                        <p class="text-light-text/90 mb-6"><strong class="text-card-bg">Propósito:</strong> Desarrollar en niños, niñas y adolescentes una cultura de emprendimiento asociativo, solidario y cooperativo desde la escuela.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">🎯 Objetivo</h4><p class="text-sm text-light-text/90">Introducir la economía solidaria en la formación escolar y técnica.</p></div>
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📋 Acciones Clave</h4><p class="text-sm text-light-text/90">Incorporar contenidos, crear cooperativas escolares, y articular con universidades.</p></div>
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📊 Indicadores</h4><p class="text-sm text-light-text/90">Docentes capacitados, proyectos escolares, jóvenes participantes.</p></div>
+                         </div>
+                        <div class="flex items-start flex-wrap gap-x-4 gap-y-2 text-sm mb-6">
+                            <strong class="text-card-bg pt-1">Normas:</strong>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=69573" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 1780/2016</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=52971" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 1622/2013</a>
+                            </div>
+                        </div>
+                         <div class="space-y-4">
+                             <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Resumen</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">Esta herramienta busca cultivar una cultura de emprendimiento asociativo, solidario y cooperativo desde las etapas más tempranas de la formación educativa. El objetivo es que niños, niñas y adolescentes comprendan y practiquen formas de organización democrática y económica que no solo contribuyan a su futuro empoderamiento, sino también al desarrollo de sus comunidades. Se propone integrar estos conceptos en el sistema educativo formal, ya sea a través de la creación de cooperativas escolares, la inclusión de la economía solidaria en el currículo de ciencias sociales o ética, y la articulación con el SENA y universidades para ofrecer formación técnica específica. La Resolución 093 de 2024, que crea los Consejos Pedagógicos Departamentales, es un marco ideal para adaptar estos contenidos a las realidades territoriales, asegurando su pertinencia y efectividad.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Comentario de aplicación</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">La formación temprana en valores de cooperación y autogestión es una inversión estratégica con un impacto a mediano y largo plazo. Cuanto antes los jóvenes se apropien de estos principios, más sólidas y sostenibles serán las futuras organizaciones que lideren. La implementación de esta herramienta debe ser una prioridad en los Planes Educativos Municipales (PEM) y en los convenios interinstitucionales entre alcaldías, el sector educativo y las organizaciones de la economía solidaria. Asimismo, el uso de tecnologías como la inteligencia artificial puede ser un poderoso aliado en zonas rurales con conectividad, democratizando el acceso al conocimiento y permitiendo a los jóvenes no solo consumir información, sino también crear y adaptar soluciones a sus contextos locales, convirtiéndose en agentes de una verdadera revolución educativa en sus territorios.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div id="herramienta-4" class="bg-primary/50 p-8 rounded-lg shadow-lg scroll-mt-header border border-muted/30">
+                        <h3 class="text-2xl font-bold text-accent-secondary mb-6">4. Fondos Concursables</h3>
+                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">🎯 Objetivo</h4><p class="text-sm text-light-text/90">Facilitar recursos a iniciativas colectivas con viabilidad y enfoque solidario.</p></div>
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📋 Acciones Clave</h4><p class="text-sm text-light-text/90">Crear fondos de capital semilla, entregar activos colectivamente, y establecer alianzas.</p></div>
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📊 Indicadores</h4><p class="text-sm text-light-text/90">Proyectos beneficiados, recursos invertidos, sostenibilidad a 2 años.</p></div>
+                         </div>
+                        <div class="flex items-start flex-wrap gap-x-4 gap-y-2 text-sm mb-6">
+                            <strong class="text-card-bg pt-1">Normas:</strong>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=69573" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 1780/2016</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=160966" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 2069/2020</a>
+                            </div>
+                        </div>
+                         <div class="space-y-4">
+                            <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Resumen</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">Esta herramienta está diseñada para superar una de las barreras más significativas que enfrentan las juventudes rurales al iniciar sus proyectos: la falta de capital y recursos. Su propósito es proveer apoyo financiero, logístico y en especie para fortalecer la autonomía y sostenibilidad de los emprendimientos asociativos. Esto se logra mediante la creación de fondos concursables de capital semilla a nivel municipal o departamental, con una destinación preferencial para jóvenes. Además, se promueve la entrega colectiva de activos productivos, como equipos o insumos, bajo modelos de gestión solidaria, como bancos de herramientas o fondos rotatorios, para maximizar el beneficio comunitario. La estrategia también contempla la articulación de estos apoyos con procesos de formación y seguimiento, así como la creación de alianzas público-privadas para cofinanciar la dotación de las asociaciones juveniles rurales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Comentario de aplicación</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                        <p class="text-light-text/80 text-sm">El apoyo financiero no debe ser un acto aislado. Su efectividad se multiplica cuando se articula con un acompañamiento técnico integral que asegure una buena gobernanza organizativa y un acceso claro a los mercados. Es crucial que estos fondos se institucionalicen dentro de los planes de desarrollo locales o de juventudes, con reglas de operación transparentes, mecanismos de rendición de cuentas y un enfoque en la sostenibilidad a largo plazo. La experiencia demuestra que el capital semilla es mucho más potente cuando se transforma en capital colectivo con vocación de permanencia, como en el caso de los bancos de herramientas comunitarios, donde un activo beneficia a todo el grupo en lugar de a un solo individuo. Este enfoque no solo mejora la productividad, sino que también fortalece los lazos de confianza y solidaridad dentro de la organización.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <div id="herramienta-5" class="bg-primary/50 p-8 rounded-lg shadow-lg scroll-mt-header border border-muted/30">
+                        <h3 class="text-2xl font-bold text-accent-secondary mb-6">5. Acceso a Mercados</h3>
+                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">🎯 Objetivo</h4><p class="text-sm text-light-text/90">Crear canales de comercialización justos e inclusivos para la juventud rural.</p></div>
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📋 Acciones Clave</h4><p class="text-sm text-light-text/90">Incluir asociaciones en compras públicas, facilitar alianzas y apoyar plataformas digitales.</p></div>
+                             <div class="bg-dark-bg p-4 rounded-lg border border-muted/30"><h4 class="font-bold mb-2 text-accent-secondary">📊 Indicadores</h4><p class="text-sm text-light-text/90">Volumen de ventas, número de alianzas, jóvenes capacitados.</p></div>
+                         </div>
+                        <div class="flex items-start flex-wrap gap-x-4 gap-y-2 text-sm mb-6">
+                            <strong class="text-card-bg pt-1">Normas:</strong>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=151025" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Ley 2046/2020</a>
+                                <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=159934" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-primary/10 text-accent-primary px-3 py-1 rounded-full font-semibold border border-accent-primary/40 hover:bg-accent-primary/20 transition-colors">Decreto 248/2021</a>
+                            </div>
+                        </div>
+                          <div class="space-y-4">
+                            <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Resumen</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                    <div class="p-4">
+                                         <p class="text-light-text/80 text-sm">Esta herramienta se enfoca en conectar a las organizaciones juveniles rurales con compradores, garantizando que puedan comercializar sus productos o servicios de manera justa, directa y sostenible. El objetivo es integrarlas en cadenas de valor locales, institucionales y privadas, superando uno de los mayores desafíos para los emprendedores del campo. La implementación se basa en estrategias como la inclusión de cooperativas juveniles en programas de compras públicas, como el de alimentación escolar (PAE), el fomento de alianzas productivas con empresas ancla (supermercados, agroindustrias), y el apoyo al desarrollo de plataformas digitales para la venta directa. Asimismo, se promueven los procesos de certificación y valor agregado (como sellos agroecológicos o marcas colectivas) para que puedan acceder a mercados diferenciados y más rentables, siguiendo el exitoso ejemplo de iniciativas como Comproagro en Boyacá.</p>
+                                    </div>
+                                </div>
+                            </div>
+                              <div class="accordion-item">
+                                <button class="accordion-header w-full flex justify-between items-center text-left py-3 px-4 bg-dark-bg rounded-t-lg border-b border-muted/30">
+                                    <span class="font-semibold text-card-bg">Comentario de aplicación</span>
+                                    <svg class="w-5 h-5 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="accordion-content bg-dark-bg rounded-b-lg">
+                                     <div class="p-4">
+                                         <p class="text-light-text/80 text-sm">El acceso a mercados es el eslabón final que convierte una organización juvenil en un proyecto económicamente viable y sostenible. Sin embargo, este paso requiere el desarrollo de capacidades clave, como el manejo de empaques, facturación, mantenimiento de un volumen constante de producción y el cumplimiento de estándares de calidad. Por esta razón, el apoyo a la comercialización debe ser parte de una estrategia integral que incluya capacitación, asistencia técnica continua y la formalización legal de la organización. Los gobiernos locales juegan un rol fundamental como "puentes" que conectan a las juventudes rurales organizadas con compradores institucionales o privados, facilitando las alianzas y abriendo puertas que de otro modo permanecerían cerradas. El éxito de esta herramienta depende de un enfoque coordinado que prepare a los jóvenes para cumplir con las demandas del mercado.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     <!-- Add other tools in the same fashion -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Download Section -->
+        <section id="descargar-pdf" class="py-20 bg-card-bg">
+            <div class="container mx-auto px-6">
+                <div class="bg-background rounded-lg shadow-lg p-8 md:p-12 border border-border-color grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-primary mb-4">Descarga el Documento Completo</h2>
+                        <p class="text-muted mb-6">Accede a la versión completa de la "Caja de Herramientas para la Acción Colectiva" para explorar en profundidad todos los conceptos, marcos normativos y estrategias detalladas.</p>
+                        <a href="Caja de Herramientas_Asociatividad_Emprendimiento Joven RURAL_version27042025_D.docx" download class="inline-block bg-accent-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-primary/90 transition-colors">
+                            Descargar PDF
+                        </a>
+                    </div>
+                     <div class="flex justify-center items-center">
+                        <div class="w-64">
+                            <img src="https://storage.googleapis.com/dialogflow-workbench-upload-agent-integration-storage-prod/2133f40f-78e7-444f-a859-a5481775fbf1/Caja%20de%20Herramientas_Asociatividad_Emprendimiento%20Joven%20RURAL_version27042025_D.docx-1.png" alt="Portada del documento" class="rounded-lg shadow-2xl w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/850x1100/1f2937/FFFFFF?text=Documento';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section: Autores -->
+        <section id="autores" class="py-20 bg-background">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary">Autores y Creadores</h2>
+                     <p class="mt-4 text-lg text-muted max-w-2xl mx-auto">Un equipo de profesionales comprometidos. Haz clic en sus perfiles para saber más.</p>
+                </div>
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
+                        <a href="https://www.linkedin.com/in/dario-castillo-sandoval" target="_blank" rel="noopener noreferrer" class="group">
+                            <div class="flex flex-col items-center group-hover:opacity-75 transition-opacity">
+                                <div class="w-24 h-24 bg-accent-primary/10 rounded-full mb-2 flex items-center justify-center text-accent-primary font-bold text-2xl">DC</div>
+                                <h4 class="font-bold text-primary">Darío Castillo Sandoval</h4>
+                                <p class="text-xs text-muted">Coordinador</p>
+                            </div>
+                        </a>
+                        <a href="http://linkedin.com/in/sebastiangaravino/" target="_blank" rel="noopener noreferrer" class="group">
+                            <div class="flex flex-col items-center group-hover:opacity-75 transition-opacity">
+                                <div class="w-24 h-24 bg-accent-primary/10 rounded-full mb-2 flex items-center justify-center text-accent-primary font-bold text-2xl">SG</div>
+                                <h4 class="font-bold text-primary">Sebastián Garaviño Ramírez</h4>
+                                <p class="text-xs text-muted">Experto en Juventud</p>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/santiagogonzaleznunez/" target="_blank" rel="noopener noreferrer" class="group">
+                            <div class="flex flex-col items-center group-hover:opacity-75 transition-opacity">
+                                <div class="w-24 h-24 bg-accent-primary/10 rounded-full mb-2 flex items-center justify-center text-accent-primary font-bold text-2xl">SG</div>
+                                <h4 class="font-bold text-primary">Santiago González Núñez</h4>
+                                <p class="text-xs text-muted">Especialista en Eco. Social</p>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jorgerestrepocano/" target="_blank" rel="noopener noreferrer" class="group">
+                            <div class="flex flex-col items-center group-hover:opacity-75 transition-opacity">
+                                <div class="w-24 h-24 bg-accent-primary/10 rounded-full mb-2 flex items-center justify-center text-accent-primary font-bold text-2xl">JR</div>
+                                <h4 class="font-bold text-primary">Jorge Restrepo Cano</h4>
+                                <p class="text-xs text-muted">Productor Agroecológico</p>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/carlos-andr%C3%A8s-trejos-participaci%C3%B3nciudadana/" target="_blank" rel="noopener noreferrer" class="group">
+                            <div class="flex flex-col items-center group-hover:opacity-75 transition-opacity">
+                                <div class="w-24 h-24 bg-accent-primary/10 rounded-full mb-2 flex items-center justify-center text-accent-primary font-bold text-2xl">CT</div>
+                                <h4 class="font-bold text-primary">Carlos Trejos Obando</h4>
+                                <p class="text-xs text-muted">Planeación Participativa</p>
+                            </div>
+                        </a>
+                    </div>
+                    <img src="https://storage.googleapis.com/dialogflow-workbench-upload-agent-integration-storage-prod/2133f40f-78e7-444f-a859-a5481775fbf1/Caja%20de%20Herramientas_Asociatividad_Emprendimiento%20Joven%20RURAL_version27042025_D.docx-2.png" alt="Logo de CoachCoop Talento Solidario" class="h-16 mx-auto mt-8" onerror="this.onerror=null;this.src='https://placehold.co/200x80/FFFFFF/0D2F3F?text=CoachCoop';">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg text-light-text">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 CoachCoop - Talento Solidario. Todos los derechos reservados.</p>
+            <p class="text-sm text-light-text/70 mt-2">Sitio web creado a partir del documento "Caja de herramientas para la acción colectiva".</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+             link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('svg');
+                
+                const isOpening = !content.style.maxHeight;
+
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    c.style.maxHeight = null;
+                    c.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
+                });
+
+                if (isOpening) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
